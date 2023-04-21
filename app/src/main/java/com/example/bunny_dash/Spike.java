@@ -1,5 +1,6 @@
 package com.example.bunny_dash;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -17,5 +18,24 @@ public class Spike {
         spike[2] = BitmapFactory.decodeResource(context.getResources(),R.drawable.spike2);
         random = new Random();
         resetPosition();
+    }
+
+    public Bitmap getSpike(int spikeFrame){
+        return spike[spikeFrame];
+    }
+
+    public int getSpikeWidth(){
+        return spike[0].getWidth();
+    }
+
+    public int getSpikeHeight(){
+        return spike[0].getHeight();
+    }
+
+    public void resetPosition(){
+
+        spikeX = random.nextInt(GameView.dWidth - getSpikeWidth());
+        spikeX = -200 + random.nextInt(600)*-1;
+        spikeVelocity = 35 + random.nextInt(16);
     }
 }
