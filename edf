@@ -1,0 +1,41 @@
+[33mcommit d4fa71cb85ffcb97379473d4b8e068e4726c25ed[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31mBunny_Dash/main[m[33m)[m
+Author: Sapeksh Pareek <sapekshpareek136@gmail.com>
+Date:   Mon Apr 24 03:56:31 2023 +0530
+
+    Added Variables to GameView Class!
+
+[33mcommit db373501535bccadb12806477d679b8d7866bbb1[m
+Author: Sarthak Nagar <sarthaknagarjii@gmail.com>
+Date:   Sun Apr 23 22:24:04 2023 +0530
+
+    Created New File GameView.java
+
+[33mcommit faf6ddaa0987cefcfb13c8dd8ec2f6dc61515199[m
+Author: Sarthak Nagar <sarthaknagarjii@gmail.com>
+Date:   Sun Apr 23 22:21:25 2023 +0530
+
+    Added new Class Explosions.
+
+[33mcommit 438e7a30736b08142a358b82dd0e98b4be08039d[m
+Author: Shivansh Bhatnagar <bhatnagarshivansh19@gmail.com>
+Date:   Fri Apr 21 15:15:26 2023 +0530
+
+    Added More Functionality to Spikes!
+
+[33mcommit 8fc6e388f86209516611f3f4d44d06a5f3119ff8[m
+Author: Shivansh Bhatnagar <bhatnagarshivansh19@gmail.com>
+Date:   Fri Apr 21 14:43:38 2023 +0530
+
+    Added New Class Spikes with images.
+
+[33mcommit bda34ab6b592b70f7b3f3f58b601cea1b54081c8[m
+Author: Sapeksh Pareek <sapekshpareek136@gmail.com>
+Date:   Thu Apr 20 19:25:13 2023 +0530
+
+    Front Page Design
+
+[33mcommit 901cd1a3f65b7ab6c28b0d98cf7e08837dc7a3ed[m
+Author: Sapeksh Pareek <sapekshpareek136@gmail.com>
+Date:   Thu Apr 20 15:00:05 2023 +0530
+
+    Initial Commit!
