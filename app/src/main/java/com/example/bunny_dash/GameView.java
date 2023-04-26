@@ -109,6 +109,15 @@ public class GameView extends View{
             spikes.get(i).spikeY += spikes.get(i).spikeVelocity;
                 if (spikes.get(i).spikeY + spikes.get(i).getSpikeHeight() >= dHeight - ground.getHeight())_{
                     points += 10;
-            }
+                    Explosion explosion = new Explosion(context);
+                    explosion.explosionX =spikes.get(i).spikeX;
+                    explosion.explosionY = spikes.get(i).spikeY;
+                    explosions.add(explosion) ;
+                    spikes.get(i).resetPosition() ;
+                }
+        }
+
+        
+
     }
 }
