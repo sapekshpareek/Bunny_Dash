@@ -1,9 +1,13 @@
 package com.example.bunny_dash;
 
+import static android.os.Build.VERSION_CODES.O;
+
 import android.app.Activity;
+import android.app.BackgroundServiceStartNotAllowedException;
 import android. content. Context;
 import android. graphics. Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
@@ -88,9 +92,23 @@ public class GameView extends View{
         for(int i=0; i<3; i++){
             Spike spike = new Spike(context);
 
-
         }
+    }
 
-
+    protected void onDraw(Canvas canvas){
+        super.onDraw(canvas);
+        canvas. drawBitmap(background,  null, rectBackground, null) ;
+        canvas. drawBitmap(ground,  null, rectGround, null) ;
+        canvas.drawBitmap(rabbit, rabbitX, rabbitY,  null);
+        for (int i = O; i<spikes.size(); i++){
+            canvas.drawBitmap(spikes.get(i).getSpike(spikes.get(i).spikeFrame), spikes.get(i).spikeX, spikes.get(i).spikeY, null);
+            spikes.get(i).spikeFrame++;
+            if (spikes.get(i).spikeFrame > 2){
+                spikes.get(i).spikeFrame = 0;
+            }
+            spikes.get(i).spikeY += spikes.get(i).spikeVelocity;
+                if (spikes.get(i).spikeY + spikes.get(i).getSpikeHeight() >= dHeight - ground.getHeight())_{
+                    points += 10;
+            }
     }
 }
