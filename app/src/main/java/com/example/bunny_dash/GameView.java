@@ -133,8 +133,15 @@ public class GameView extends View{
                 }
             }
         }
-        
 
+        for(int i=0; i<explosions.size(); i++){
+            canvas.drawBitmap(explosions.get(i).getExplosion(explosions.get(i).explosionFrame),explosions.get(i).explosionX,
+                    explosions.get(i).explosionY, null);
+            explosions.get(i).explosionFrame++;
+            if(explosions.get(i).explosionFrame>3) {
+                explosions.remove(i);
+            }
+        }
 
 
     }
