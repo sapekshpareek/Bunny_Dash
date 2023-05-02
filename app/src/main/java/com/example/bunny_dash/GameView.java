@@ -107,7 +107,7 @@ public class GameView extends View{
                 spikes.get(i).spikeFrame = 0;
             }
             spikes.get(i).spikeY += spikes.get(i).spikeVelocity;
-                if (spikes.get(i).spikeY + spikes.get(i).getSpikeHeight() >= dHeight - ground.getHeight())_{
+                if(spikes.get(i).spikeY + spikes.get(i).getSpikeHeight() >= dHeight - ground.getHeight()){
                     points += 10;
                     Explosion explosion = new Explosion(context);
                     explosion.explosionX =spikes.get(i).spikeX;
@@ -117,7 +117,25 @@ public class GameView extends View{
                 }
         }
 
+        for(int i = 0; i< spikes.size(); i++){
+            if(spikes.get(i).spikeX + spikes.get(i).getSpikeWidth() >= rabbitX
+            && spikes.get(i).spikeX <= rabbitX + rabbit.getWidth()
+            && spikes.get().get(i).spikes.Y + spikes.get(i).getSpikeWidth() >= rabbitY
+            && spikes.get(i).spikeY + spikes.get(i).getSpikeWidth() <= rabbitY + rabbit.getHeight()){
+                life--;
+                spikes.get(i).resetPosition();
+                if(life == 0){
+                    Intent intent = new Intent(context, GameOver.class);
+                    intent.putExtra("points", points);
+                    context.startActivity(intent);
+                    ((Activity)context).finish();
+
+                }
+            }
+        }
         
+
+
 
     }
 }
