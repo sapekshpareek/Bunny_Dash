@@ -5,6 +5,7 @@ import static android.os.Build.VERSION_CODES.O;
 import android.app.Activity;
 import android.app.BackgroundServiceStartNotAllowedException;
 import android. content. Context;
+import android.content.Intent;
 import android. graphics. Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -14,13 +15,14 @@ import android.graphics.Point;
 import android. graphics. Rect;
 import android.view.Display;
 import android. view. View;
+import android.os.Handler;
 
 import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
+
+import java.util.*;
 
 import javax.net.ssl.SNIHostName;
 
@@ -57,22 +59,7 @@ public class GameView extends View{
         dHeight = size.y;
         rectBackground = new Rect(0,0,dWidth,dHeight);
         rectGround = new Rect(0,dHeight - ground.getHeight(),dWidth,dHeight);
-        handler = new Handler() {
-            @Override
-            public void publish(LogRecord logRecord) {
 
-            }
-
-            @Override
-            public void flush() {
-
-            }
-
-            @Override
-            public void close() throws SecurityException {
-
-            }
-        };
         runnable = new Runnable() {
             @Override
             public void run() {
@@ -120,7 +107,7 @@ public class GameView extends View{
         for(int i = 0; i< spikes.size(); i++){
             if(spikes.get(i).spikeX + spikes.get(i).getSpikeWidth() >= rabbitX
             && spikes.get(i).spikeX <= rabbitX + rabbit.getWidth()
-            && spikes.get().get(i).spikes.Y + spikes.get(i).getSpikeWidth() >= rabbitY
+            && spikes.get(i).spikeY + spikes.get(i).getSpikeWidth() >= rabbitY
             && spikes.get(i).spikeY + spikes.get(i).getSpikeWidth() <= rabbitY + rabbit.getHeight()){
                 life--;
                 spikes.get(i).resetPosition();
@@ -143,6 +130,14 @@ public class GameView extends View{
             }
         }
 
+        if(life == 2){
+            healthPaint.setColor(Color.YELLOW);
+        } else if (life == 1) {
+            healthPaint.setColor(Color.RED);
+        }
+        canvas.drawRect(dWidth-200, 30, dWidth-200+60*life,80,healthPaint);
+        canvas.drawText("" + points,20, TEXT_SIZE, textPaint);
+        handler.postDelayed(runnable, UPDATE_MILLIS);
 
     }
 }
