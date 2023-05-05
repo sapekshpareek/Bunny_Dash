@@ -14,6 +14,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android. graphics. Rect;
 import android.view.Display;
+import android.view.MotionEvent;
 import android. view. View;
 import android.os.Handler;
 
@@ -138,6 +139,20 @@ public class GameView extends View{
         canvas.drawRect(dWidth-200, 30, dWidth-200+60*life,80,healthPaint);
         canvas.drawText("" + points,20, TEXT_SIZE, textPaint);
         handler.postDelayed(runnable, UPDATE_MILLIS);
+
+    }
+
+    public boolean onTouchEvent(MotionEvent event){
+        float touchX = event.getX();
+        float touchY = event.getY();
+        if(touchY >= rabbitY){
+            int action  = event.getAction();
+            if(action == MotionEvent.ACTION_DOWN){
+                oldX = event.getX();
+            }
+            
+            }
+        }
 
     }
 }
