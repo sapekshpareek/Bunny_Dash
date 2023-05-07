@@ -150,9 +150,17 @@ public class GameView extends View{
             if(action == MotionEvent.ACTION_DOWN){
                 oldX = event.getX();
             }
-            
+            if(action == MotionEvent.ACTION_MOVE){
+                float shift = oldX - touchX;
+                float newRabbitX = oldRabbitX - shift;
+                if(newRabbitX <= 0)
+                    rabbitX = 0;
+                else if (newRabbitX >= dWidth - rabbit.getWidth())
+                    rabbitX = dWidth - rabbit.getWidth();
+                else
+                    rabbitX = newRabbitX;
             }
         }
-
+        
     }
 }
