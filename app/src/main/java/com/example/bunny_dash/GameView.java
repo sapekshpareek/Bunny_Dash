@@ -161,6 +161,6 @@ public class GameView extends View{
                     rabbitX = newRabbitX;
             }
         }
-        
+        return true;
     }
 }
