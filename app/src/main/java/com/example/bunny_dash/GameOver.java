@@ -1,6 +1,7 @@
 package com.example.bunny_dash;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -39,6 +40,15 @@ public class GameOver extends AppCompatActivity {
             editor.commit();
         }
         tvHighest.setText(""+highest);
+    }
+
+    public void restart(View view){
+        Intent intent = new Intent(GameOver.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void exit(View view){
+        finish();
     }
 
 }
