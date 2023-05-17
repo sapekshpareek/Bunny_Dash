@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Bunny_Dash" parent="Base.Theme.Bunny_Dash" />
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreem" parent = "@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>
